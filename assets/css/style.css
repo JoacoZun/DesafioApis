@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #212529;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 2rem;
+    max-width: 500px;
+    border-radius: 40px;
+    gap: .5rem;
+    background-color: #495057;
+    text-align: center;
+    color: white;
+    font-size: larger;
+}
+
+.container input, select {
+    width: 60%;
+    border-radius: 5px;
+    padding: .4em;
+    margin: auto;
+    border: none;
+    text-align: center;
+}
+button {
+    width: 15%;
+    border: none;
+    border-radius: 5px;
+    padding: .5em 1em;
+    background-color:#0dcaf0;
+    color: white;
+    margin: auto;
+}
+button:hover {
+    background-color: #0dcaf0;
+}
+
+canvas {
+    width: 100%;
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0%);
+    }
+    15% {
+        transform: translateX(-9px) rotate(-6deg);
+    }
+    30% {
+        transform: translateX(7px) rotate(6deg);
+    }
+    45% {
+        transform: translateX(-7px) rotate(-3.6deg);
+    }
+    60% {
+        transform: translateX(5px) rotate(2.4deg);
+    }
+    75% {
+        transform: translateX(-5px) rotate(-1.2deg);
+    }
+}
