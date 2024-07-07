@@ -1,12 +1,18 @@
 let currentChart = null
 
+const validateInput = (event) => {
+    const input = event.target
+    const value = input.value
+    input.value = value.replace(/[^0-9]/g, '')
+}
+
 const handleClick = async () => {
     const select = document.querySelector("#selectCurrency")
     const dinero = document.querySelector("#dinero")
     const errorMessage = document.querySelector("#error-message")
 
        if (!select.value || dinero.value === "" || dinero.value < 0) {
-        errorMessage.innerText = "Complete los campos para iniciar la conversión!!!"
+        errorMessage.innerText = "Complete los campos para iniciar, solo valores numericos para precios CLP!!!"
         errorMessage.classList.add("shake")
         setTimeout(() => errorMessage.classList.remove("shake"), 500)
         return
@@ -23,7 +29,6 @@ const handleClick = async () => {
             throw new Error(`Error de http status: ${res.status}`)
         }
         const data = await res.json()
-
         if (!data.serie) {
             throw new Error("Error de data")
         }
@@ -94,6 +99,13 @@ const handleClick = async () => {
         errorMessage.innerText = "Ha ocurrido un error."
     }
 }
+const dineroInput = document.querySelector("#dinero")
+dineroInput.addEventListener('input', validateInput)
 
+dineroInput.addEventListener('keydown', (event) => {
+    if (["e", "E", ".", "-", "+"].includes(event.key)) {
+        event.preventDefault()
+    }
+})
 const btnBuscar = document.querySelector("#btn-buscar")
 btnBuscar.addEventListener('click', handleClick)

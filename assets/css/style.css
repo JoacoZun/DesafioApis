@@ -24,7 +24,7 @@ h1 {
 }
 
 .container input, select {
-    width: 60%;
+    width: 80%;
     border-radius: 5px;
     padding: .4em;
     margin: auto;
@@ -32,16 +32,11 @@ h1 {
     text-align: center;
 }
 button {
-    width: 15%;
-    border: none;
     border-radius: 5px;
-    padding: .5em 1em;
+    padding: .5rem 2rem;
     background-color:#0dcaf0;
     color: white;
     margin: auto;
-}
-button:hover {
-    background-color: #0dcaf0;
 }
 
 canvas {
