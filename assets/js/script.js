@@ -12,7 +12,7 @@ const handleClick = async () => {
     const errorMessage = document.querySelector("#error-message")
 
        if (!select.value || dinero.value === "" || dinero.value < 0) {
-        errorMessage.innerText = "Complete los campos para iniciar, solo valores numericos para precios CLP!!!"
+        errorMessage.innerText = "Complete los campos para iniciar!!!"
         errorMessage.classList.add("shake")
         setTimeout(() => errorMessage.classList.remove("shake"), 500)
         return
